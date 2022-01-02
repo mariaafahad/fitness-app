@@ -1,12 +1,14 @@
-import React from 'react';
-import HeroSection from '../HeroSection/HeroSection';
+import React from "react";
+import Header from "../../../Components/Header/Header";
+import HeroSection from "../HeroSection/HeroSection";
 
 const Home = () => {
-    return (
-        <>
-            <HeroSection></HeroSection>
-        </>
-    );
+  return (
+    <>
+      <Header></Header>
+      <HeroSection></HeroSection>
+    </>
+  );
 };
 
 export default Home;
