@@ -1,16 +1,46 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const links = [
+    {
+      page: "Home",
+      link: "/home",
+    },
+    {
+      page: "Services",
+      link: "/services",
+    },
+    {
+      page: "Our Classes",
+      link: "/class",
+    },
+    {
+      page: "Plans",
+      link: "/plans",
+    },
+    {
+      page: "About Us",
+      link: "/about",
+    },
+    {
+      page: "Contact",
+      link: "/contact",
+    },
+  ];
   return (
-    <nav className="absolute w-full z-30 top-0 text-white">
+    <nav
+      // style={{ backgroundColor: "#0006" }}
+      className="absolute w-full z-30 top-0 text-white bg-gradient-to-b from-black"
+    >
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
           <a
-            className="uppercase toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+            className="uppercase toggleColour text-white hover:text-yellow-300 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
             href="#"
           >
-            Fit<span className="text-yellow-300">ness</span>
+            Fitness <span className="text-yellow-300">Gym</span>
           </a>
         </div>
 
@@ -39,54 +69,29 @@ const Header = () => {
           id="nav-content"
         >
           <ul className="list-reset lg:flex justify-end flex-1 items-center">
+            {links.map((link) => (
+              <li key={link.page} className="mr-3">
+                <Link
+                  className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-yellow-300 hover:text-underline"
+                  to={link.link}
+                >
+                  {link.page}
+                </Link>
+              </li>
+            ))}
             <li className="mr-3">
-              <a
-                className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-gray-100 hover:text-underline"
-                href="#"
-              >
-                Home
-              </a>
-            </li>
-            <li className="mr-3">
-              <a
-                className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-gray-100 hover:text-underline"
-                href="#"
-              >
-                Services
-              </a>
-            </li>
-            <li className="mr-3">
-              <a
-                className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-gray-100 hover:text-underline"
-                href="#"
-              >
-                Our Classes
-              </a>
-            </li>
-            <li className="mr-3">
-              <a
-                className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-gray-100 hover:text-underline"
-                href="#"
-              >
-                About us
-              </a>
-            </li>
-            <li className="mr-3">
-              <a
-                className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-gray-100 hover:text-underline"
-                href="#"
-              >
-                Pricing
-              </a>
-            </li>
-            <li className="mr-3">
-              <a
-                className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-gray-100 hover:text-underline"
-                href="#"
-              >
-                Contact us
-              </a>
-            </li>
+                <Link
+                  className="inline-block py-2 px-4 text-white hover:text-yellow-300 font-bold no-underline hover:text-gray-100 hover:text-underline"
+                  to='/dashboard'
+                >
+                  Dashboard
+                </Link>
+              </li>
+            <Link to="/login">
+              <button className="mx-auto md:mx-0 hover:underline uppercase bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold my-4 py-1 px-6 shadow-sm rounded-2xl">
+                Login
+              </button>
+            </Link>
           </ul>
         </div>
       </div>
