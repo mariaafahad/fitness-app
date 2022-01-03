@@ -11,7 +11,7 @@ const Specialities = () => {
                         className="absolute inset-0 w-full object-cover object-center h-96"
                         src="https://i.ibb.co/PFPnRPw/dumbbells-fitness-335224-876.jpg"
                     />
-                    <div className="px-8 py-10 relative z-10 w-full h-96  bg-gray-700 opacity-0 hover:opacity-25 items-center justify-center ">
+                    <div className="px-8 py-10 relative z-10 w-full h-96  bg-gray-500 opacity-0 hover:opacity-25 items-center justify-center ">
                         <h2 className="tracking-widest text-4xl title-font font-medium text-green-100 m-8">
                             Nutrition
 
