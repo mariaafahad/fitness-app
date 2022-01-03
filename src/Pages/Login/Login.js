@@ -1,37 +1,76 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-    return (
-        <div className="container m-20 p-20 border-2 rounded-lg ">
+  return (
+    <>
+      <div className="bg-indigo-100 lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
+        <div className="py-8 px-8 rounded-xl">
+          <h1 className="font-medium text-2xl mt-3 text-center">Login</h1>
+          <form action="" className="mt-6">
+            <div className="my-5 text-sm">
+              
+              <input
+                type="text"
+                id="username"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Username"
+              ></input>
+            </div>
+            <div className="my-5 text-sm">
+              
+              <input
+                type="password"
+                id="password"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Password"
+              ></input>
+             
+            </div>
 
-            <section class="flex flex-col md:flex-row h-screen items-center">
-                <div class="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
-                    <img src="https://i.ibb.co/R7Ss0tC/photo-1623874514711-0f321325f318.jpg" alt="" class="w-full h-full object-cover" />
-                </div>
-                <div class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto  md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
-        flex items-center justify-center">
-                    <div class="w-full h-100">
-                        <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">Log in to your account</h1>
-                        <form class="mt-6" action="#" method="POST">
-                            <div>
-                                <label class="block text-gray-700">Email Address</label>
-                                <input type="email" name="" id="" placeholder="Enter Email Address" class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none" autofocus autocomplete required />
-                            </div>
+            <button className="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
+              Login
+            </button>
+          </form>
 
-                            <div class="mt-4">
-                                <label class="block text-gray-700">Password</label>
-                                <input type="password" name="" id="" placeholder="Enter Password" minlength="6" class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
-                focus:bg-white focus:outline-none" required />
-                            </div>
-                            <button type="submit" class="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-white font-semibold rounded-lg
-              px-4 py-3 mt-6">Log In</button>
-                        </form>
-                        <hr class="my-6 border-gray-300 w-full" />
-                    </div>
-                </div>
-            </section>
+          <div className="flex md:justify-between justify-center items-center mt-10">
+            <div
+              style={{ height: "1px" }}
+              className="bg-gray-300 md:block hidden w-4/12"
+            ></div>
+            <p className="md:mx-2 text-sm font-light text-black-400">
+              Login With Social
+            </p>
+            <div
+              style={{ height: "1px" }}
+              className="bg-gray-300 md:block hidden w-4/12"
+            ></div>
+          </div>
+
+          <div className="grid md:grid-cols-1 gap-2 mt-7">
+            <div>
+              <button className="text-center w-full text-white bg-blue-900 p-3 duration-300 rounded-sm hover:bg-blue-700">
+                Google
+              </button>
+            </div>
+          </div>
+
+          <p className="mt-7 text-xs text-center font-light text-black-400">
+            <span>Don't have an account? </span>
+            <Link to="/register" className="text-blue-900 font-medium">
+              Create One
+            </Link>
+          </p>
+          <p className="mt-3 text-xs text-center font-light text-black-400">
+            <span>Back to - </span>
+            <Link to="/home" className="text-blue-900 font-medium">
+              Home
+            </Link>
+          </p>
         </div>
-    );
+      </div>
+    </>
+  );
 };
 
 export default Login;

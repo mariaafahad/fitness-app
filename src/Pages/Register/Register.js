@@ -1,219 +1,97 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
-    return (
-        <div>
-
-            <h1>This is registration</h1>
-
-            <div
-                class="min-h-screen flex flex-col items-center justify-center bg-gray-100"
-            >
-                <div
-                    class="
-          flex flex-col
-          bg-white
-          shadow-md
-          px-4
-          sm:px-6
-          md:px-8
-          lg:px-10
-          py-8
-          rounded-3xl
-          w-50
-          max-w-md
-        "
-                >
-                    <div class="font-medium self-center text-xl sm:text-3xl text-gray-800">
-                        Join us Now
-                    </div>
-                    <div class="mt-4 self-center text-xl sm:text-sm text-gray-800">
-                        Enter your credentials to get access account
-                    </div>
-
-                    <div class="mt-10">
-                        <form action="#">
-                            <div class="flex flex-col mb-5">
-                                <label
-                                    for="email"
-                                    class="mb-1 text-xs tracking-wide text-gray-600"
-                                >Name:</label
-                                >
-                                <div class="relative">
-                                    <div
-                                        class="
-                    inline-flex
-                    items-center
-                    justify-center
-                    absolute
-                    left-0
-                    top-0
-                    h-full
-                    w-10
-                    text-gray-400
-                  "
-                                    >
-                                        <i class="fas fa-user text-blue-500"></i>
-                                    </div>
-
-                                    <input
-                                        id="email"
-                                        type="email"
-                                        name="email"
-                                        class="
-                    text-sm
-                    placeholder-gray-500
-                    pl-10
-                    pr-4
-                    rounded-2xl
-                    border border-gray-400
-                    w-full
-                    py-2
-                    focus:outline-none focus:border-blue-400
-                  "
-                                        placeholder="Enter your name"
-                                    />
-                                </div>
-                            </div>
-                            <div class="flex flex-col mb-5">
-                                <label
-                                    for="email"
-                                    class="mb-1 text-xs tracking-wide text-gray-600"
-                                >E-Mail Address:</label
-                                >
-                                <div class="relative">
-                                    <div
-                                        class="
-                    inline-flex
-                    items-center
-                    justify-center
-                    absolute
-                    left-0
-                    top-0
-                    h-full
-                    w-10
-                    text-gray-400
-                  "
-                                    >
-                                        <i class="fas fa-at text-blue-500"></i>
-                                    </div>
-
-                                    <input
-                                        id="email"
-                                        type="email"
-                                        name="email"
-                                        class="
-                    text-sm
-                    placeholder-gray-500
-                    pl-10
-                    pr-4
-                    rounded-2xl
-                    border border-gray-400
-                    w-full
-                    py-2
-                    focus:outline-none focus:border-blue-400
-                  "
-                                        placeholder="Enter your email"
-                                    />
-                                </div>
-                            </div>
-                            <div class="flex flex-col mb-6">
-                                <label
-                                    for="password"
-                                    class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
-                                >Password:</label
-                                >
-                                <div class="relative">
-                                    <div
-                                        class="
-                    inline-flex
-                    items-center
-                    justify-center
-                    absolute
-                    left-0
-                    top-0
-                    h-full
-                    w-10
-                    text-gray-400
-                  "
-                                    >
-                                        <span>
-                                            <i class="fas fa-lock text-blue-500"></i>
-                                        </span>
-                                    </div>
-
-                                    <input
-                                        id="password"
-                                        type="password"
-                                        name="password"
-                                        class="
-                    text-sm
-                    placeholder-gray-500
-                    pl-10
-                    pr-4
-                    rounded-2xl
-                    border border-gray-400
-                    w-full
-                    py-2
-                    focus:outline-none focus:border-blue-400
-                  "
-                                        placeholder="Enter your password"
-                                    />
-                                </div>
-                            </div>
-
-                            <div class="flex w-full">
-                                <button
-                                    type="submit"
-                                    class="
-                  flex
-                  mt-2
-                  items-center
-                  justify-center
-                  focus:outline-none
-                  text-white text-sm
-                  sm:text-base
-                  bg-blue-500
-                  hover:bg-blue-600
-                  rounded-2xl
-                  py-2
-                  w-full
-                  transition
-                  duration-150
-                  ease-in
-                "
-                                >
-                                    <span class="mr-2 uppercase">Sign Up</span>
-                                    <span>
-                                        <svg
-                                            class="h-6 w-6"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center mt-6">
-
-
-
-
-                </div>
+  return (
+    <>
+      <div className="bg-indigo-100 lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
+        <div className="py-8 px-8 rounded-xl">
+          <h1 className="font-medium text-2xl mt-3 text-center">Register</h1>
+          <form action="" className="mt-6">
+          <div className="my-5 text-sm">
+              
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Enter your name"
+              ></input>
+            </div>
+            <div className="my-5 text-sm">
+              
+              <input
+                type="text"
+                id="email"
+                name="email"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Enter your email"
+              ></input>
+            </div>
+            <div className="my-5 text-sm">
+             
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Password"
+              ></input>
+            </div>
+            <div className="my-5 text-sm">
+             
+              <input
+                type="password"
+                id="password2"
+                name="password2"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Confirm your Password"
+              ></input>
             </div>
 
+            <button className="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
+              Register
+            </button>
+          </form>
+
+          <div className="flex md:justify-between justify-center items-center mt-10">
+            <div
+              style={{ height: "1px" }}
+              className="bg-gray-300 md:block hidden w-4/12"
+            ></div>
+            <p className="md:mx-2 text-sm font-light text-black-400">
+              Login With Social
+            </p>
+            <div
+              style={{ height: "1px" }}
+              className="bg-gray-300 md:block hidden w-4/12"
+            ></div>
+          </div>
+
+          <div className="grid md:grid-cols-1 gap-2 mt-7">
+            <div>
+              <button className="text-center w-full text-white bg-blue-900 p-3 duration-300 rounded-sm hover:bg-blue-700">
+                Google
+              </button>
+            </div>
+          </div>
+
+          <p className="mt-7 text-xs text-center font-light text-black-400">
+            <span>Already have an account? </span>
+            <Link to="/login" className="text-blue-900 font-medium">
+              Please Login
+            </Link>
+          </p>
+          <p className="mt-3 text-xs text-center font-light text-black-400">
+            <span>Back to - </span>
+            <Link to="/home" className="text-blue-900 font-medium">
+              Home
+            </Link>
+          </p>
         </div>
-    );
+      </div>
+    </>
+  );
 };
 
 export default Register;

@@ -1,6 +1,5 @@
 import React from "react";
-const img =
-  "https://cdn.pixabay.com/photo/2017/01/16/15/28/boxer-1984344_960_720.jpg";
+const img = "https://i.ibb.co/kxP12gD/banner-bg.jpg";
 
 const HeroSection = () => {
   return (
@@ -15,7 +14,9 @@ const HeroSection = () => {
               THE BEST FITNESS STUDIO IN TOWN
             </h1>
             <p class="leading-normal text-xl my-8">
-              We believe that you can achieve anything, if there is a desire and the willingness to work hard for it. So, are you ready to take the challenge?
+              We believe that you can achieve anything, if there is a desire and
+              the willingness to work hard for it. So, are you ready to take the
+              challenge?
             </p>
             <button class="mx-auto lg:mx-0 hover:underline uppercase bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold rounded my-6 py-3 px-12 shadow-sm">
               Join Us
