@@ -1,49 +1,75 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Register = () => {
+  const { user, registerWithEmail, error, isLoding } = useAuth();
+  const [newUser, setNewUser] = useState({});
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const userData = { ...newUser };
+    userData[field] = value;
+    setNewUser(userData);
+  };
+  const handleRegister = (e) => {
+    if (newUser.password1 !== newUser.password2) {
+      alert("Don't match your password");
+    }
+    registerWithEmail(
+      newUser.email,
+      newUser.name,
+      newUser.password1,
+      location,
+      navigate
+    );
+    e.preventDefault();
+  };
   return (
     <>
       <div className="bg-indigo-100 lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
         <div className="py-8 px-8 rounded-xl">
           <h1 className="font-medium text-2xl mt-3 text-center">Register</h1>
-          <form action="" className="mt-6">
-          <div className="my-5 text-sm">
-              
+          <form onSubmit={handleRegister} action="" className="mt-6">
+            <div className="my-5 text-sm">
               <input
                 type="text"
                 id="name"
                 name="name"
+                onBlur={handleBlur}
                 className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
                 placeholder="Enter your name"
               ></input>
             </div>
             <div className="my-5 text-sm">
-              
               <input
                 type="text"
                 id="email"
                 name="email"
+                onBlur={handleBlur}
                 className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
                 placeholder="Enter your email"
               ></input>
             </div>
             <div className="my-5 text-sm">
-             
               <input
                 type="password"
                 id="password"
-                name="password"
+                name="password1"
+                onBlur={handleBlur}
                 className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
                 placeholder="Password"
               ></input>
             </div>
             <div className="my-5 text-sm">
-             
               <input
                 type="password"
                 id="password2"
                 name="password2"
+                onBlur={handleBlur}
                 className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
                 placeholder="Confirm your Password"
               ></input>
