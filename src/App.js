@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <Home></Home>
-      {/* <div className='bg-blue-100 w -full h-screen'></div> */}
+
     </div>
   );
 }
