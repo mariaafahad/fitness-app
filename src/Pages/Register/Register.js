@@ -4,7 +4,7 @@ const Register = () => {
     return (
         <div>
 
-
+            <h1>This is registration</h1>
 
             <div
                 class="min-h-screen flex flex-col items-center justify-center bg-gray-100"
