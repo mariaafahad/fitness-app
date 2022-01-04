@@ -28,7 +28,7 @@ const Dashboard = () => {
                                 <Link to="/payment">Payment Details</Link>
                             </li>
                             <li>
-
+                                <Link to="/class">Our classes</Link>
                             </li>
                             <li>
 
@@ -82,9 +82,6 @@ const Dashboard = () => {
                                                 <th className="px-16 py-2">
                                                     <span className="text-indigo-50">Name</span>
                                                 </th>
-                                                <th className="px-16 py-2">
-                                                    <span className="text-indigo-50">Barcode</span>
-                                                </th>
 
                                                 <th className="px-16 py-2">
                                                     <span className="text-indigo-50">Price</span>
@@ -110,14 +107,7 @@ const Dashboard = () => {
                                                     <span>10:00</span>
                                                 </td>
 
-                                                <td className="px-16 py-2">
-                                                    <span className="text-green-500">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h5" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path stroke="none" d="M0 0h24v24H0z" />
-                                                            <path d="M5 12l5 5l10 -10" />
-                                                        </svg>
-                                                    </span>
-                                                </td>
+
                                             </tr>
 
 
