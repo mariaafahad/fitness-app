@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Training = () => {
   return (
     <div className="py-16 bg-gray-100">
-      <h1 className="text-4xl font-bold text-neutral-800">
+      <h1 className="text-4xl font-bold text-neutral-800 text-center">
         Our Training Program
       </h1>
       <section class="container max-w-5xl mx-auto m-8 md:flex px-4 sm:px-6 lg:px-4">
