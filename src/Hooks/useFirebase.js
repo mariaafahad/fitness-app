@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  getIdToken,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -20,6 +21,7 @@ const useFirebase = () => {
   const [successUser, setSuccessUser] = useState(false);
   const [error, setError] = useState("");
   const [isLoding, setIsLoding] = useState(true);
+  const [token, setToken] = useState("");
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -33,7 +35,7 @@ const useFirebase = () => {
 
         const newUser = { email, displayName: name };
         setUser(newUser);
-        saveUser(email, name, "POST");
+        saveUser(email, name);
 
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -61,7 +63,7 @@ const useFirebase = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
-        saveUser(user.email, user.displayName, "PUT");
+        saveUser(user.email, user.displayName);
         setError("");
         const destination = location?.state?.from || "/";
         navigate(destination);
@@ -96,17 +98,20 @@ const useFirebase = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        getIdToken(user).then((idToken) => {
+          setToken(idToken);
+        });
       } else {
         setUser({});
       }
       setIsLoding(false);
       return unsubscribe;
     });
-  }, []);
+  }, [auth]);
 
   // admin useEffect
   useEffect(() => {
-    fetch(`http://localhost:5000/api/users/register/${user.email}`)
+    fetch(`https://rocky-coast-79726.herokuapp.com/api/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.isAdmin));
   }, [user.email]);
@@ -126,11 +131,11 @@ const useFirebase = () => {
   };
 
   // save user to database
-  const saveUser = (email, username, method) => {
+  const saveUser = (email, username) => {
     const user = { email, username };
     console.log(user);
-    fetch("http://localhost:5000/api/users/register", {
-      method: method,
+    fetch("https://rocky-coast-79726.herokuapp.com/api/users", {
+      method: "POST",
       headers: {
         "content-type": "application/json",
       },
@@ -144,6 +149,7 @@ const useFirebase = () => {
     error,
     isLoding,
     successUser,
+    token,
     registerWithEmail,
     signInWithGoogle,
     loginWithEmail,
