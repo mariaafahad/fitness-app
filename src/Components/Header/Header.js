@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Header = () => {
+  const { user, successUser, logOut } = useAuth();
   const [open, setOpen] = useState(false);
+
   const links = [
     {
       page: "Home",
@@ -36,12 +39,12 @@ const Header = () => {
     >
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
-          <a
+          <Link
             className="uppercase toggleColour text-white hover:text-yellow-300 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-            href="#"
+            to="/"
           >
             Fitness <span className="text-yellow-300">Gym</span>
-          </a>
+          </Link>
         </div>
 
         <div className="block lg:hidden pr-4">
@@ -79,19 +82,35 @@ const Header = () => {
                 </Link>
               </li>
             ))}
-            <li className="mr-3">
+            {user.email && (
+              <li className="mr-3">
                 <Link
                   className="inline-block py-2 px-4 text-white hover:text-yellow-300 font-bold no-underline hover:text-gray-100 hover:text-underline"
-                  to='/dashboard'
+                  to="/dashboard"
                 >
                   Dashboard
                 </Link>
               </li>
-            <Link to="/login">
-              <button className="mx-auto md:mx-0 hover:underline uppercase bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold my-4 py-1 px-6 shadow-sm rounded-2xl">
-                Login
+            )}
+            {user.email && (
+              <button className="inline-block py-2 px-4 text-white hover:text-yellow-300 font-bold no-underline hover:text-gray-100 hover:text-underline">
+                {user.displayName}
               </button>
-            </Link>
+            )}
+            {user.email ? (
+              <button
+                onClick={logOut}
+                className="mx-auto md:mx-0 hover:underline uppercase bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold my-4 py-1 px-6 shadow-sm rounded-2xl"
+              >
+                logOut
+              </button>
+            ) : (
+              <Link to="/login">
+                <button className="mx-auto md:mx-0 hover:underline uppercase bg-yellow-300 hover:bg-yellow-400 text-gray-800 font-bold my-4 py-1 px-6 shadow-sm rounded-2xl">
+                  Login
+                </button>
+              </Link>
+            )}
           </ul>
         </div>
       </div>
