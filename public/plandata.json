@@ -1,0 +1,90 @@
+[
+    {
+      "id": 1,
+      "name": "Yoga Program",
+      "img": "https://i.ibb.co/2kTSTTY/1000-F-286305748-Vy5ed2f-Nnsw-FQa-SGINykodj-GBZ8ey1-ZJ.jpg",
+      "service": [
+        "Hatha Yoga",
+        "Yogasanas",
+        "Angamardana",
+        "Upa Yoga",
+        "Ashtanga Yoga",
+        "And more..."
+      ],
+      "price": 350,
+      "category": "program"
+    },
+    {
+      "id": 2,
+      "name": "Personal Program",
+      "img": "https://i.ibb.co/nCCM2Tj/1000-F-317917629-Hj-BCy-Rl-H1-Hpwwg2-Hf-Eb-Ex-Tdkby-Wi-GFu-N.jpg",
+      "service": [
+        "Fitness assessment",
+        "Fitness goal identification",
+        "Design of tailored exercise",
+        "Fitness progress monitoring",
+        "Basic nutrition advice"
+      ],
+      "price": 300,
+      "category": "program"
+    },
+    {
+      "id": 3,
+      "name": "Group Program",
+      "img": "https://i.ibb.co/g32hY1Z/1000-F-301820150-No-Jen84-Iosmu-T0-R3l-Hs-BUKB04xo-K2-Am-G.jpg",
+      "service": [
+        "Exercising with fun",
+        "Proper guidance ",
+        "Variety in training",
+        "Basic nutrition advice",
+        "Fitness training with team"
+      ],
+      "price": 200,
+      "category": "program"
+    },
+    {
+      "id": 4,
+      "name": "Monthly",
+      "img": "https://i.ibb.co/34s6gqj/class1.jpg",
+      "service": [
+        "BEGINNER TRAINING",
+        "STRENGTH TRAINING",
+        "CARDIO TRAINING",
+        "ADVANCE GYM",
+        "SELF DEFENSE",
+        "PSYCHO TRAINING"
+      ],
+      "price": 100,
+      "category": "timely"
+    },
+    {
+      "id": 5,
+      "name": "Yearly",
+      "img": "https://i.ibb.co/NnxzQhS/class5.jpg",
+      "service": [
+        "BEGINNER TRAINING",
+        "STRENGTH TRAINING",
+        "CARDIO TRAINING",
+        "ADVANCE GYM",
+        "SELF DEFENSE",
+        "PSYCHO TRAINING"
+      ],
+      "price": 1000,
+      "category": "timely"
+    },
+    {
+      "id": 6,
+      "name": "Life Time",
+      "img": "https://i.ibb.co/fdXp5VS/class3.jpg",
+      "service": [
+        "BEGINNER TRAINING",
+        "STRENGTH TRAINING",
+        "CARDIO TRAINING",
+        "ADVANCE GYM",
+        "SELF DEFENSE",
+        "PSYCHO TRAINING"
+      ],
+      "price": 10000,
+      "category": "timely"
+    }
+  ]

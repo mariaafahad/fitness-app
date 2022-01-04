@@ -18,11 +18,11 @@ const About = () => {
             />
           </div>
           <div className="my-3">
-            <h1 className="uppercase text-teal-900 text-3xl"> Fitness Gym</h1>
-            <h1 className="text-teal-800 text-2xl my-5">
-              WE ARE HERE TO DREAM! <br /> <br /> OUR TEAM IS HERE SURV YOU.
+            <h1 className="uppercase text-teal-900 text-3xl text-center"> Fitness Gym</h1>
+            <h1 className="text-teal-800 text-2xl my-5 text-center">
+              WE ARE HERE TO PROVIDE YOU THE BEST SERVICE.
             </h1>
-            <p class="mt-4 text-gray-600 text-xl">
+            <p className="mt-4 text-gray-600 text-xl">
               No matter what you’re looking for in a gym, we’ve got a membership
               option made for you. All "FITNESS GYM" members enjoy unlimited
               access to their home club and the support of our friendly,

@@ -12,10 +12,6 @@ const Header = () => {
       link: "/home",
     },
     {
-      page: "Services",
-      link: "/services",
-    },
-    {
       page: "Our Classes",
       link: "/class",
     },
@@ -26,11 +22,7 @@ const Header = () => {
     {
       page: "About Us",
       link: "/about",
-    },
-    {
-      page: "Contact",
-      link: "/contact",
-    },
+    }
   ];
   return (
     <nav

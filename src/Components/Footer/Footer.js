@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="container mx-auto px-8">
         <div className="w-full flex flex-col md:flex-row py-6 gap-x-8">
           {/* Logo Column */}
-          <div class="md:w-1/4 mb-6 text-black">
+          <div className="md:w-1/4 mb-6 text-black">
             <Link
-              class="text-white no-underline font-bold text-2xl lg:text-4xl uppercase"
+              className="text-white no-underline font-bold text-2xl lg:text-4xl uppercase"
               to="/home"
             >
               Fitness <span className="text-yellow-300">Gym</span>
@@ -19,45 +19,45 @@ const Footer = () => {
             </p>
           </div>
           {/* Menu Column */}
-          <div class="md:w-1/4 md:text-left">
-            <p class="uppercase text-gray-400 md:mb-6 font-bold">Footer Menu</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+          <div className="md:w-1/4 md:text-left">
+            <p className="uppercase text-gray-400 md:mb-6 font-bold">Footer Menu</p>
+            <ul className="list-reset mb-6">
+              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <Link
                   to="/home"
-                  class="no-underline hover:underline text-gray-500 hover:text-yellow-500"
+                  className="no-underline hover:underline text-gray-500 hover:text-yellow-500"
                 >
                   Our Services
                 </Link>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <Link
                   to="/class"
-                  class="no-underline hover:underline text-gray-500 hover:text-yellow-500"
+                  className="no-underline hover:underline text-gray-500 hover:text-yellow-500"
                 >
                   Our Classes
                 </Link>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <Link
                   to="/pricing"
-                  class="no-underline hover:underline text-gray-500 hover:text-yellow-500"
+                  className="no-underline hover:underline text-gray-500 hover:text-yellow-500"
                 >
                   Our Pricing
                 </Link>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <Link
                   to="/about"
-                  class="no-underline hover:underline text-gray-500 hover:text-yellow-500"
+                  className="no-underline hover:underline text-gray-500 hover:text-yellow-500"
                 >
                   About Us
                 </Link>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <Link
                   to="/contact"
-                  class="no-underline hover:underline text-gray-500 hover:text-yellow-500"
+                  className="no-underline hover:underline text-gray-500 hover:text-yellow-500"
                 >
                   Contact Us
                 </Link>
@@ -65,39 +65,39 @@ const Footer = () => {
             </ul>
           </div>
           {/* Menu Column */}
-          <div class="md:w-1/4 md:text-left">
-            <p class="uppercase text-gray-400 md:mb-6 font-bold">
+          <div className="md:w-1/4 md:text-left">
+            <p className="uppercase text-gray-400 md:mb-6 font-bold">
               Connect with Us
             </p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+            <ul className="list-reset mb-6">
+              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <Link
                   to="http://www.facebook.com/"
-                  class="no-underline hover:underline text-gray-500 hover:text-yellow-500"
+                  className="no-underline hover:underline text-gray-500 hover:text-yellow-500"
                 >
                   Facebook
                 </Link>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <Link
                   to="http://www.twitter.com/"
-                  class="no-underline hover:underline text-gray-500 hover:text-yellow-500"
+                  className="no-underline hover:underline text-gray-500 hover:text-yellow-500"
                 >
                   Twitter
                 </Link>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <Link
                   to="http://www.youtube.com/"
-                  class="no-underline hover:underline text-gray-500 hover:text-yellow-500"
+                  className="no-underline hover:underline text-gray-500 hover:text-yellow-500"
                 >
                   Youtube
                 </Link>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <Link
                   to="http://www.instagram.com/"
-                  class="no-underline hover:underline text-gray-500 hover:text-yellow-500"
+                  className="no-underline hover:underline text-gray-500 hover:text-yellow-500"
                 >
                   Instagram
                 </Link>
@@ -105,8 +105,8 @@ const Footer = () => {
             </ul>
           </div>
           {/* Menu Column */}
-          <div class="md:w-1/4 md:text-left">
-            <p class="uppercase text-gray-400 md:mb-6 font-bold">
+          <div className="md:w-1/4 md:text-left">
+            <p className="uppercase text-gray-400 md:mb-6 font-bold">
               Join Our Newsletter
             </p>
             <p className="text-gray-400">
