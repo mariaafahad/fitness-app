@@ -22,13 +22,20 @@ const Contact = () => {
                                 </div>
                                 <div className="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
                                     <label className="font-semibold leading-none text-gray-300">Phone</label>
-                                    <input type="email" className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" />
+                                    <input type="number" className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" />
                                 </div>
                             </div>
                             <div className="md:flex items-center mt-8">
                                 <div className="w-full flex flex-col">
                                     <label className="font-semibold leading-none text-gray-300">Subject</label>
                                     <input type="text" className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" />
+                                </div>
+
+                            </div>
+                            <div className="md:flex items-center mt-8">
+                                <div className="w-full flex flex-col">
+                                    <label className="font-semibold leading-none text-gray-300">Email Address</label>
+                                    <input type="email" className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" />
                                 </div>
 
                             </div>
