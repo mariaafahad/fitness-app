@@ -1,45 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import PageBanner from "../../Components/SharedComponents/PageBanner";
 
-const OurClasses = [
-  {
-    title: "PSYCHO TRAINING",
-    img: "https://i.ibb.co/34s6gqj/class1.jpg",
-  },
-  {
-    title: "SELF DEFENSE",
-    img: "https://i.ibb.co/6t2v1yc/class2.jpg",
-  },
-  {
-    title: "ADVANCE GYM",
-    img: "https://i.ibb.co/fdXp5VS/class3.jpg",
-  },
-  {
-    title: "CARDIO TRAINING",
-    img: "https://i.ibb.co/YyYN8rL/class4.jpg",
-  },
-  {
-    title: "STRENGTH TRAINING",
-    img: "https://i.ibb.co/NnxzQhS/class5.jpg",
-  },
-  {
-    title: "BEGINNER TRAINING",
-    img: "https://i.ibb.co/mHLL4XB/class6.jpg",
-  },
-];
-
 const OurClass = () => {
+  const [ourClasses, setOurClasses] = useState([]);
+
+  useEffect(() => {
+    fetch("https://rocky-coast-79726.herokuapp.com/api/services")
+      .then((res) => res.json())
+      .then((data) => setOurClasses(data));
+  }, []);
+
   return (
     <>
       <Header></Header>
       <PageBanner title="Our Classes"></PageBanner>
       <div className="container mx-auto py-10">
         <div className="flex flex-wrap mx-4">
-          {OurClasses.map((each) => (
-            <div key={each.title} className="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
-              <a
+          {ourClasses.map((each) => (
+            <div
+              key={each.title}
+              className="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4"
+            >
+              <Link
+                to={`/class/${each._id}`}
                 href=""
                 className="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden"
               >
@@ -55,7 +41,7 @@ const OurClass = () => {
                     {each.title}
                   </h3>
                 </div>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

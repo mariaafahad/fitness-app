@@ -3,12 +3,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import PageBanner from "../../Components/SharedComponents/PageBanner";
+import useAuth from "../../Hooks/useAuth";
 
 const Checkout = () => {
+  const { user } = useAuth();
   const navigate = useNavigate();
   const { PlanId } = useParams();
   const [data, setData] = useState({});
   const [plans, setPlans] = useState({});
+  const [order, setOrder] = useState({});
 
   useEffect(() => {
     fetch("https://rocky-coast-79726.herokuapp.com/api/plans")
@@ -18,9 +21,30 @@ const Checkout = () => {
       });
   }, [PlanId]);
 
+  const orderData = {
+    serviceName: plans.name,
+    email: user.email,
+    price: plans.price,
+  };
+
   const handleSubmit = (e) => {
+    setOrder(orderData);
+    console.log(orderData, order);
+    navigate("/dashboard");
+    fetch("https://rocky-coast-79726.herokuapp.com/api/orders", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(orderData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data._id) {
+          alert("add to cart successfully");
+        }
+      });
     e.preventDefault();
-    console.log(data);
   };
 
   const handleInputOnChange = (e) => {
@@ -29,8 +53,6 @@ const Checkout = () => {
     const newData = { ...data };
     newData[name] = value;
     setData(newData);
-    navigate("/dashboard");
-    console.log(newData);
   };
 
   return (
