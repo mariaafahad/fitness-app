@@ -1,19 +1,19 @@
 import React from "react";
-const img = "https://i.ibb.co/kxP12gD/banner-bg.jpg";
+const img = "https://i.ibb.co/4Vs5kvF/wp9397072.jpg";
 
 const HeroSection = () => {
   return (
     <>
       <div
         style={{ backgroundImage: `url(${img})` }}
-        className="pb-40 pt-40 bg-blend-overlay bg-no-repeat bg-cover"
+        className="pb-40 pt-40 bg-blend-overlay bg-no-repeat bg-cover bg-gradient-to-t from-black  opacity-100 transform hover:scale-1 transition duration-300"
       >
         <div class="text-white container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
           <div class="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left">
-            <h1 class="my-4 text-4xl font-bold leading-tight">
+            <h1 class="my-4 text-4xl font-bold leading-tight text-green-400">
               THE BEST FITNESS STUDIO IN TOWN
             </h1>
-            <p class="leading-normal text-xl my-8">
+            <p class="leading-normal text-xl my-8 text-yellow-100">
               We believe that you can achieve anything, if there is a desire and
               the willingness to work hard for it. So, are you ready to take the
               challenge?

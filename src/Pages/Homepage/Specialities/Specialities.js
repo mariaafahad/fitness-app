@@ -3,7 +3,7 @@ import React from "react";
 const Specialities = () => {
   return (
     <div className="py-16">
-      <h1 className="text-4xl text-zinc-900 font-bold mb-12">Our Speciality</h1>
+      <h1 className="text-4xl text-zinc-900 font-bold mb-12 text-center">Our Speciality</h1>
       <div className="container w-full flexclass md:flex md:justify-center md:space-x-8 md:px-14 mx-auto">
         <div className="flex mb-4 relative transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
           <img
