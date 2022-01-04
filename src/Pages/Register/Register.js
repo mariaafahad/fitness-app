@@ -74,6 +74,45 @@ const Register = () => {
                 placeholder="Confirm your Password"
               ></input>
             </div>
+            <div>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Enter your name"
+              ></input>
+            </div>
+            <div className="my-5 text-sm">
+
+              <input
+                type="text"
+                id="email"
+                name="email"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Enter your email"
+              ></input>
+            </div>
+            <div className="my-5 text-sm">
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Password"
+              ></input>
+            </div>
+            <div className="my-5 text-sm">
+
+              <input
+                type="password"
+                id="password2"
+                name="password2"
+                className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full"
+                placeholder="Confirm your Password"
+              ></input>
+            </div>
 
             <button className="block text-center text-white bg-gray-800 p-3 duration-300 rounded-sm hover:bg-black w-full">
               Register
@@ -115,7 +154,7 @@ const Register = () => {
             </Link>
           </p>
         </div>
-      </div>
+      </div >
     </>
   );
 };

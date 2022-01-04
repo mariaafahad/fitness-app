@@ -35,23 +35,23 @@ const OurClass = () => {
     <>
       <Header></Header>
       <PageBanner title="Our Classes"></PageBanner>
-      <div class="container mx-auto py-10">
-        <div class="flex flex-wrap mx-4">
+      <div className="container mx-auto py-10">
+        <div className="flex flex-wrap mx-4">
           {OurClasses.map((each) => (
-            <div key={each.title} class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
+            <div key={each.title} className="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
               <a
                 href=""
-                class="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden"
+                className="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden"
               >
-                <div class="relative pb-60 overflow-hidden">
+                <div className="relative pb-60 overflow-hidden">
                   <img
-                    class="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-cover"
                     src={each.img}
                     alt="Class"
                   ></img>
                 </div>
-                <div class="p-0">
-                  <h3 class="px-2 py-5 leading-none bg-slate-900 text-yellow-300 font-semibold uppercase tracking-wide text-2xl">
+                <div className="p-0">
+                  <h3 className="px-2 py-5 leading-none bg-slate-900 text-yellow-300 font-semibold uppercase tracking-wide text-2xl">
                     {each.title}
                   </h3>
                 </div>
