@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AuthProvider from "./Context/AuthProvider/AuthProvider";
+import Sample from "./Hooks/Sample";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
@@ -25,6 +26,7 @@ function App() {
             <Route path="/class" element={<OurClass />} />
             <Route path="/plans/" element={<Plans />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/sample" element={<Sample />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
             {/* <Route path="/dashboard/*" element={<PrivateRoute><Dashboard /></PrivateRoute>} /> */}
