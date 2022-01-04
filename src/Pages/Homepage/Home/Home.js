@@ -1,11 +1,6 @@
 import React from "react";
-
 import Footer from "../../../Components/Footer/Footer";
 import Header from "../../../Components/Header/Header";
-
-
-
-
 import Features from "../Features/Features";
 import HeroSection from "../HeroSection/HeroSection";
 import Specialities from "../Specialities/Specialities";
@@ -19,6 +14,7 @@ const Home = () => {
       <Features></Features>
       <Training></Training>
       <Specialities></Specialities>
+
       <Footer></Footer>
     </>
   );

@@ -8,7 +8,7 @@ const Plans = () => {
   const [plans, setPlans] = useState([]);
 
   useEffect(() => {
-    fetch("/plandata.json")
+    fetch("https://rocky-coast-79726.herokuapp.com/api/plans")
       .then((res) => res.json())
       .then((data) => setPlans(data));
   }, []);
@@ -27,7 +27,7 @@ const Plans = () => {
               .filter((each) => each.category === "program")
               .map((each) => (
                 <div
-                  key={each.id}
+                  key={each._id}
                   className="md:w-1/3 flex mb-4 relative transition ease-in-out"
                 >
                   <img
@@ -50,7 +50,7 @@ const Plans = () => {
                       <p className="w-full pt-6 text-5xl text-white font-bold mb-4 text-center">
                         ${each.price}
                       </p>
-                      <Link to={`/checkout/${each.id}`}>
+                      <Link to={`/checkout/${each._id}`}>
                         <button className="mx-auto lg:mx-0 hover:underline gradient bg-yellow-400 text-black my-6 py-2 px-8 shadow-lg uppercase">
                           Purchase
                         </button>
@@ -70,7 +70,7 @@ const Plans = () => {
               .filter((each) => each.category === "timely")
               .map((each) => (
                 <div
-                  key={each.id}
+                  key={each._id}
                   className="md:w-1/3 flex mb-4 relative transition ease-in-out"
                 >
                   <img
@@ -92,11 +92,11 @@ const Plans = () => {
                     <p className="w-full pt-6 text-5xl text-white font-bold mb-4 text-center">
                       ${each.price}
                     </p>
-                    <Link  to={`/checkout/${each.id}`}>
+                    <Link to={`/checkout/${each._id}`}>
                       <div className="text-center">
-                      <button className="mx-auto hover:underline gradient bg-yellow-400 text-black my-6 py-2 px-8 shadow-lg uppercase">
-                        Purchase
-                      </button>
+                        <button className="mx-auto hover:underline gradient bg-yellow-400 text-black my-6 py-2 px-8 shadow-lg uppercase">
+                          Purchase
+                        </button>
                       </div>
                     </Link>
                   </div>

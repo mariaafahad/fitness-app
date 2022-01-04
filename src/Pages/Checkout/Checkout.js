@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import PageBanner from "../../Components/SharedComponents/PageBanner";
 
 const Checkout = () => {
+  const navigate = useNavigate();
   const { PlanId } = useParams();
   const [data, setData] = useState({});
   const [plans, setPlans] = useState({});
 
   useEffect(() => {
-    fetch("/plandata.json")
+    fetch("https://rocky-coast-79726.herokuapp.com/api/plans")
       .then((res) => res.json())
       .then((data) => {
-        data.map((each) => (each.id == PlanId ? setPlans(each) : {}));
+        data.map((each) => (each._id == PlanId ? setPlans(each) : {}));
       });
   }, [PlanId]);
 
@@ -28,6 +29,8 @@ const Checkout = () => {
     const newData = { ...data };
     newData[name] = value;
     setData(newData);
+    navigate("/dashboard");
+    console.log(newData);
   };
 
   return (
