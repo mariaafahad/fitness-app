@@ -9,11 +9,11 @@ const Dashboard = () => {
                     <div class="flex space-2 items-center border-b-2 pb-4">
 
                         <div class="ml-3">
-                            <h1 class="text-3xl font-bold text-indigo-600">FITNESS</h1>
-                            <p class="text-center text-sm text-indigo-600 mt-1 font-serif">DASHBOARD</p>
+                            <h1 class="text-3xl font-bold text-gray-700">FITNESS</h1>
+                            <p class="text-center text-sm text-gray-600 mt-1 font-serif">DASHBOARD</p>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-4 mt-6 p-2 bg-indigo-600 rounded-md">
+                    <div class="flex items-center space-x-4 mt-6 p-2 bg-gray-600 rounded-md">
 
                         <div>
                             <p class="text-lg text-white font-semibold">Dashboard</p>
@@ -25,7 +25,7 @@ const Dashboard = () => {
                                 <Link to="/home">Home</Link>
                             </li>
                             <li>
-
+                                <Link to="/payment">Payment Details</Link>
                             </li>
                             <li>
 
@@ -52,9 +52,9 @@ const Dashboard = () => {
                 </div>
                 <div class="bg-indigo-50 flex-grow py-12 px-10">
                     <div class="flex justify-between">
-                        <div>
-                            <h4 class="text-sm font-bold text-indigo-600">Hello!!</h4>
-                            <h1 class="text-4xl font-bold text-indigo-900 mt-">Welcome to FITNESS!!</h1>
+                        <div className="center">
+                            <h4 class="text-xl font-bold text-gray-600">Hello!!</h4>
+                            <h1 class="text-4xl font-bold text-gray-800 mt-">Welcome to FITNESS!!</h1>
                         </div>
                         <div>
                             <div class="flex items-center border rounded-lg bg-white w-max py-2 px-4 space-x-3">
@@ -72,7 +72,7 @@ const Dashboard = () => {
                                 <div>
                                     <table class="min-w-full table-auto">
                                         <thead class="justify-between">
-                                            <tr class="bg-indigo-600">
+                                            <tr class="bg-gray-600">
                                                 <th class="px-16 py-2">
                                                     <span class="text-gray-300"></span>
                                                 </th>

@@ -7,13 +7,14 @@ import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import Home from "./Pages/Homepage/Home/Home";
 import Login from "./Pages/Login/Login";
 import OurClass from "./Pages/OurClass/OurClass";
+import Payment from "./Pages/Payment/Payment";
 import Plans from "./Pages/Plans/Plans";
 import Register from "./Pages/Register/Register";
 import Services from "./Pages/Services/Services";
 
 function App() {
   return (
-    <div className="App">
+    <div className="m-auto p-auto">
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -27,6 +28,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/payment" element={<Payment />} />
             {/* <Route path="/dashboard/*" element={<PrivateRoute><Dashboard /></PrivateRoute>} /> */}
           </Routes>
         </BrowserRouter>
