@@ -12,7 +12,7 @@ const About = () => {
                 <div className="m-10">
                     <h1 className="text-teal-900 text-3xl">About Us</h1>
                     <h1 className="text-teal-800 text-2xl">Lorem ipsum dolor sit amet.</h1>
-                    <p class="mt-4 text-gray-600 text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias excepturi expedita molestias esse quisquam amet neque eum minima? Laborum est fuga facilis dolore minus velit deserunt sed ipsam ipsum esse. Quasi quos sit consequatur nihil similique. Illum, recusandae dolores quos consequatur vitae nesciunt ipsam repellat odio, non reiciendis excepturi aperiam.</p>
+                    <p className="mt-4 text-gray-600 text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias excepturi expedita molestias esse quisquam amet neque eum minima? Laborum est fuga facilis dolore minus velit deserunt sed ipsam ipsum esse. Quasi quos sit consequatur nihil similique. Illum, recusandae dolores quos consequatur vitae nesciunt ipsam repellat odio, non reiciendis excepturi aperiam.</p>
                 </div>
             </div>
         </div>

@@ -42,32 +42,32 @@ const features = [
 const Features = () => {
   return (
     <>
-      <div class="py-16">
-        <h3 class="text-2xl tracking-widest text-slate-900 text-center">
+      <div className="py-16">
+        <h3 className="text-2xl tracking-widest text-slate-900 text-center">
           FEATURES
         </h3>
-        <h1 class="my-8 text-center text-5xl text-slate-900 font-bold">
+        <h1 className="my-8 text-center text-5xl text-slate-900 font-bold">
           Our Features
         </h1>
 
         {/* <!-- Box --> */}
-        <div class="container max-w-5xl m-8 flex flex-wrap mx-auto">
+        <div className="container max-w-5xl m-8 flex flex-wrap mx-auto">
           {/* <!-- box-1 --> */}
           {features.map((each) => (
-            <div key={each.title} class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
+            <div key={each.title} className="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
               <a
                 href=""
-                class="c-card block bg-white shadow-md hover:shadow-xl overflow-hidden"
+                className="c-card block bg-white shadow-md hover:shadow-xl overflow-hidden"
               >
-                <div class="relative pb-60 overflow-hidden">
+                <div className="relative pb-60 overflow-hidden">
                   <img
-                    class="absolute inset-0 h-full w-full object-cover transform hover:scale-110 transition duration-500"
+                    className="absolute inset-0 h-full w-full object-cover transform hover:scale-110 transition duration-500"
                     src={each.img}
                     alt="Class"
                   ></img>
                 </div>
-                <div class="px-4 py-8">
-                  <h3 class="px-2 py-5 leading-none text-slate-900 font-semibold uppercase tracking-wide text-2xl">
+                <div className="px-4 py-8">
+                  <h3 className="px-2 py-5 leading-none text-slate-900 font-semibold uppercase tracking-wide text-2xl">
                     {each.title}
                   </h3>
                   <p>{each.content}</p>
@@ -77,13 +77,13 @@ const Features = () => {
 
             // <div
             //   key={each.title}
-            //   class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4 shadow-lg hover:shadow-xl transform hover:scale-1 transition duration-500 "
+            //   className="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4 shadow-lg hover:shadow-xl transform hover:scale-1 transition duration-500 "
             // >
-            //   <div class="">
-            //     <img class="w-full" src={each.img} alt="Feature" />
-            //     <div class="mt-4 py-6 text-gray-600 text-center">
-            //       <h1 class="text-xl font-bold">{each.title}</h1>
-            //       <p class="mt-4 text-gray-600">{each.content}</p>
+            //   <div className="">
+            //     <img className="w-full" src={each.img} alt="Feature" />
+            //     <div className="mt-4 py-6 text-gray-600 text-center">
+            //       <h1 className="text-xl font-bold">{each.title}</h1>
+            //       <p className="mt-4 text-gray-600">{each.content}</p>
             //     </div>
             //   </div>
             // </div>
