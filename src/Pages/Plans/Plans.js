@@ -77,10 +77,10 @@ const Plans = () => {
 
                             </div>
                             <button className="absolute left-1/4 bottom-4 bg-white text-black font-bold rounded-lg h-10 w-48">PURCHASE</button>
-                        </div>
-                    </div>
-                </section>
-            </div>
+                        </div >
+                    </div >
+                </section >
+            </div >
             <Footer></Footer>
         </>
     );
