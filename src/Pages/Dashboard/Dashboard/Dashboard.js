@@ -9,7 +9,7 @@ import MyMembership from "../MyMembership/MyMembership";
 import MyProfile from "../MyProfile/MyProfile";
 
 const Dashboard = () => {
-  const { admin, user } = useAuth();
+  const { admin, user, logOut } = useAuth();
   return (
     <div>
       <div className="min-h-screen flex">
@@ -42,19 +42,21 @@ const Dashboard = () => {
               </li>
             </ul>
           </div>
-          <div className="mt-4">
-            <p className="underline">Admin Menu</p>
-            <ul className="">
-              <li>
-                <Link to="/dashboard/all-membership">All Membership</Link>
-              </li>
-              <li>
-                <Link to="/dashboard/add-review">Add Review</Link>
-              </li>
-            </ul>
-          </div>
+          {admin && (
+            <div className="mt-4">
+              <p className="underline">Admin Menu</p>
+              <ul className="">
+                <li>
+                  <Link to="/dashboard/all-membership">All Membership</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/add-review">Add Review</Link>
+                </li>
+              </ul>
+            </div>
+          )}
           <div className="flex mt-20 space-x-4 items-center">
-            <div>
+            <div onClick={logOut}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-gray-400 hover:text-indigo-600 transition duration-200"
@@ -69,7 +71,6 @@ const Dashboard = () => {
                   d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                 />
               </svg>{" "}
-              Logout
             </div>
           </div>
         </div>
