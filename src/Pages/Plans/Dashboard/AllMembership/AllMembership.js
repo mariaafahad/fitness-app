@@ -9,7 +9,7 @@ const AllMembership = () => {
    * Fetching Order Data
    */
   useEffect(() => {
-    const URL = `https://rocky-coast-79726.herokuapp.com/api/orders/`;
+    const URL = `https://rocky-coast-79726.herokuapp.com/api/orders`;
     fetch(URL)
       .then((res) => res.json())
       .then((data) => setOrder(data));
