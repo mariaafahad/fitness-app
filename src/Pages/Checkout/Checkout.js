@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import PageBanner from "../../Components/SharedComponents/PageBanner";
 import useAuth from "../../Hooks/useAuth";
 
 const Checkout = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const { PlanId } = useParams();
   const [data, setData] = useState({});
-  const [plans, setPlans] = useState({});
-  const { user } = useAuth();
+  const [plans, setPlans] = useState([]);
+  const [order, setOrder] = useState({});
 
   useEffect(() => {
-    fetch("/plandata.json")
+    fetch("https://rocky-coast-79726.herokuapp.com/api/plans")
       .then((res) => res.json())
       .then((data) => {
-        data.map((each) => (each.id == PlanId ? setPlans(each) : {}));
+        data.map((each) => (each._id === PlanId ? setPlans(each) : {}));
       });
   }, [PlanId]);
 
   /**
    * submit order data by form
    */
+  const orderData = {
+    serviceName: plans.name,
+    email: user.email,
+    price: plans.price,
+  };
 
   const handleInputOnChange = (e) => {
     let name = e.target.name;
@@ -32,30 +39,46 @@ const Checkout = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const new_order = {
-      userdata: { ...data },
-      service_id: plans.id,
-      serviceName: plans.name,
-      price: plans.price,
-      action: "Unpaid",
-    };
+    // const new_order = {
+    //   userdata: { ...data },
+    //   service_id: plans.id,
+    //   serviceName: plans.name,
+    //   price: plans.price,
+    //   action: "Unpaid",
+    // };
 
-    console.log(new_order);
+    // console.log(new_order);
 
-    fetch("https://rocky-coast-79726.herokuapp.com/api/orders/", {
+    // fetch("https://rocky-coast-79726.herokuapp.com/api/orders/", {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(new_order),
+    // })
+    //   .then((res) => res.json())
+    //   .then((result) => {
+    //     if (result.insertedId) {
+    //       alert("Order Placed", result.insertedId);
+    //     }
+    //   });
+    setOrder(orderData);
+    console.log(orderData, order);
+    navigate("/dashboard");
+    fetch("https://rocky-coast-79726.herokuapp.com/api/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(new_order),
+      body: JSON.stringify(orderData),
     })
       .then((res) => res.json())
-      .then((result) => {
-        if (result.insertedId) {
-          alert("Order Placed", result.insertedId);
+      .then((data) => {
+        if (data._id) {
+          alert("add to cart successfully");
         }
       });
+    e.preventDefault();
   };
 
   return (
