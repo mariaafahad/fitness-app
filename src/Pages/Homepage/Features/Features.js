@@ -5,37 +5,37 @@ const features = [
     title: "Training",
     img: "https://i.ibb.co/Yf4dsjG/1000-F-254439919-elnq-Ug-LQt48-CG5q-Lk-C62-ZOADd-TW5jg-DD.jpg",
     content:
-      "Pretium lectus quam id leo in vitae turpis. Mattis pellentesque id nibh tortor id.",
+      "Training properly is the main feature of our fitness gym.",
   },
   {
-    title: "Guidence",
+    title: "Guidance",
     img: "https://i.ibb.co/LYDpGQx/1000-F-255973060-r-Iru57r-RLw3hj-Wsr-Xlyh8-H70-Iw-L8i9-YP.jpg",
     content:
-      "Pretium lectus quam id leo in vitae turpis. Mattis pellentesque id nibh tortor id.",
+      "We never hesitate to provide the guidance to our members.",
   },
   {
-    title: "Trainings",
+    title: "Helping",
     img: "https://i.ibb.co/g32hY1Z/1000-F-301820150-No-Jen84-Iosmu-T0-R3l-Hs-BUKB04xo-K2-Am-G.jpg",
     content:
-      "Pretium lectus quam id leo in vitae turpis. Mattis pellentesque id nibh tortor id.",
+      "We always help our members at the time of training.",
   },
   {
     title: "Mental Support",
     img: "https://i.ibb.co/YyYN8rL/class4.jpg",
     content:
-      "Pretium lectus quam id leo in vitae turpis. Mattis pellentesque id nibh tortor id.",
+      "We are conscious about mental health of our members.",
   },
   {
     title: "Lifestyle Seminars",
     img: "https://i.ibb.co/NnxzQhS/class5.jpg",
     content:
-      "Pretium lectus quam id leo in vitae turpis. Mattis pellentesque id nibh tortor id.",
+      "We used to arrange seminars on lifestyles for our members.",
   },
   {
-    title: "Lifetime Membership",
+    title: "Lifetime Member",
     img: "https://i.ibb.co/mHLL4XB/class6.jpg",
     content:
-      "Pretium lectus quam id leo in vitae turpis. Mattis pellentesque id nibh tortor id.",
+      "We provide an offer of lifetime membership.",
   },
 ];
 
