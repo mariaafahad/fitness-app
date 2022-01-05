@@ -16,8 +16,7 @@ const Specialities = () => {
               Nutrition
             </h2>
             <h1 className="title-font text-lg font-medium text-white mb-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-              totam.
+              We are conscious about your nutrition.
             </h1>
           </div>
         </div>
@@ -32,8 +31,7 @@ const Specialities = () => {
               Workout
             </h2>
             <h1 className="title-font text-lg font-medium text-white mb-3">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore,
-              pariatur.
+              We always make sure the workout routine of our member.
             </h1>
           </div>
         </div>
@@ -48,8 +46,7 @@ const Specialities = () => {
               Progress
             </h2>
             <h1 className="title-font text-lg font-medium text-white mb-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
-              doloribus!
+              We maintain the progress of out member.
             </h1>
           </div>
         </div>

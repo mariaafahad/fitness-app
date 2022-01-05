@@ -1,58 +1,61 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import PageBanner from "../../Components/SharedComponents/PageBanner";
 import useAuth from "../../Hooks/useAuth";
 
 const Checkout = () => {
-  const { user } = useAuth();
-  const navigate = useNavigate();
   const { PlanId } = useParams();
   const [data, setData] = useState({});
   const [plans, setPlans] = useState({});
-  const [order, setOrder] = useState({});
+  const { user } = useAuth();
 
   useEffect(() => {
-    fetch("https://rocky-coast-79726.herokuapp.com/api/plans")
+    fetch("/plandata.json")
       .then((res) => res.json())
       .then((data) => {
-        data.map((each) => (each._id == PlanId ? setPlans(each) : {}));
+        data.map((each) => (each.id == PlanId ? setPlans(each) : {}));
       });
   }, [PlanId]);
 
-  const orderData = {
-    serviceName: plans.name,
-    email: user.email,
-    price: plans.price,
-  };
-
-  const handleSubmit = (e) => {
-    setOrder(orderData);
-    console.log(orderData, order);
-    navigate("/dashboard");
-    fetch("https://rocky-coast-79726.herokuapp.com/api/orders", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(orderData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data._id) {
-          alert("add to cart successfully");
-        }
-      });
-    e.preventDefault();
-  };
+  /**
+   * submit order data by form
+   */
 
   const handleInputOnChange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
-    const newData = { ...data };
+    const newData = { email: user.email, ...data };
     newData[name] = value;
     setData(newData);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const new_order = {
+      userdata: { ...data },
+      service_id: plans.id,
+      serviceName: plans.name,
+      price: plans.price,
+      action: "Unpaid",
+    };
+
+    console.log(new_order);
+
+    fetch("https://rocky-coast-79726.herokuapp.com/api/orders/", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(new_order),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          alert("Order Placed", result.insertedId);
+        }
+      });
   };
 
   return (
@@ -62,11 +65,11 @@ const Checkout = () => {
       <div className="py-4 bg-gray-100">
         <div className="container mx-auto bg-gray-100 mt-10 sm:mt-0">
           <span className="text-5xl text-black font-bold flex w-fit mx-auto mt-4 inline px-4 py-2 bg-white rounded-md uppercase">
-            Plan Price : ${plans.price}
+            Membership Price : ${plans.price}
           </span>
           <div className="flex flex-col md:max-w-5xl mx-auto md:gap-6 p-8 bg-gray-100">
             <div className="w-full">
-              <div className="px-4 sm:px-0">
+              <div className="px-4 sm:px-0 text-center">
                 <h3 className="text-lg font-medium leading-6 text-gray-900">
                   Personal Information
                 </h3>
@@ -88,6 +91,7 @@ const Checkout = () => {
                           Your name
                         </label>
                         <input
+                          defaultValue={user?.displayName}
                           onBlur={handleInputOnChange}
                           type="text"
                           name="name"
@@ -105,6 +109,7 @@ const Checkout = () => {
                           Email address
                         </label>
                         <input
+                          defaultValue={user?.email}
                           onBlur={handleInputOnChange}
                           type="text"
                           name="email"
@@ -143,6 +148,9 @@ const Checkout = () => {
                           autoComplete="gender-name"
                           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         >
+                          <option disabled value="Select">
+                            Select Gender
+                          </option>
                           <option value="Male">Male</option>
                           <option value="Female">Female</option>
                         </select>
